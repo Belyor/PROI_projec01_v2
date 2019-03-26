@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1553621289 source:/home/andrzej/PROGRAMOWANIE_OBIEKTOWE/projekt_1/main.cpp
+	"Big_number.h"
+	<iostream>
+	<vector>
+	<string>
+
+1553033351 source:/home/andrzej/PROGRAMOWANIE_OBIEKTOWE/projekt_1/src/big_number.cpp
+	"big_number.h"
+
+1553538985 /home/andrzej/PROGRAMOWANIE_OBIEKTOWE/projekt_1/include/big_number.h
+	<bits/stdc++.h>
+	<string>
+
+1553621250 /home/andrzej/PROGRAMOWANIE_OBIEKTOWE/projekt_1/include/Big_number.h
+	<bits/stdc++.h>
+	<iostream>
+	<vector>
+	<string>
+
+1553620986 source:/home/andrzej/PROGRAMOWANIE_OBIEKTOWE/projekt_1/src/Big_number.cpp
+	"Big_number.h"
+	<string>
+

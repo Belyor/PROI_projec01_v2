@@ -1,0 +1,43 @@
+#ifndef Big_number_H
+#define Big_number_H
+#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+class Big_number
+
+{
+  private:
+    string string_number_;
+    string string_MAX_;
+    vector<unsigned long long int> my_vec_number_{0, 0};
+    const unsigned long long int ULLI_MAX_;
+    const size_t size_string_MAX_;
+    size_t size_string_number_;
+
+  public:
+    //  Big_number
+    Big_number(const unsigned long long int  ulli_max, vector <unsigned long long int> vect);
+
+    Big_number(string st_number);
+
+    ~Big_number();
+
+    Big_number operator=(const Big_number &bg);
+    Big_number operator+(const Big_number &other)const;
+    bool operator==(const Big_number &other)const;
+    Big_number operator+(const Big_number &other)const;
+
+
+    string get_string_number()
+    {
+        return string_number_;
+    }
+
+  protected:
+};
+
+#endif // Big_number_H
