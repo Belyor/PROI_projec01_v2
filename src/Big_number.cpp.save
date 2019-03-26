@@ -1,6 +1,10 @@
 #include "Big_number.h"
 #include <string>
 
+void printStr (string_number_)
+{
+    for (int i = 0; i < size_string_number_; i++)
+}
 /* Big_number::Big_number(const unsigned long long int  ulli_max=12, vector <unsigned long long int> vect): ULLI_MAX_(ulli_max)
   {
        size_t vect_size=vect.size();
@@ -95,15 +99,15 @@ bool Big_number::operator==(const Big_number &other) const
 }
 
 //  ******************* == ******************
-bool Big_number::operator>const Big_number &other) const
+bool Big_number::operator>(const Big_number &other) const
 {
-    return string_number_.compare
+    return string_number_.compare(other.string_number_);
 }
 
 //  ******************* == ******************
 bool Big_number::operator<(const Big_number &other) const
 {
-    return 
+    return other.string_number_.compare(string_number_);
 }
 
 //  ******************* + ******************

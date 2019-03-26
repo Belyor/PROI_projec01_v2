@@ -8,9 +8,11 @@ using namespace std;
 int main()
 {
     char key;
+    
+    
     cout << "Table convension press: T\n"
             "String convension press: S\n"
-            "Exit press: \n";
+            "Exit press: Q\n";
     cin >> key;
 
     switch (key)
@@ -37,12 +39,16 @@ int main()
         Big_number number2(str_ulli_number);
         cout << "\n Number2: " << number2.get_string_number() << endl;
 
-        number1 = number1 * number2;
-        cout << "\n Number3: " << number1.get_string_number() << endl;
+        //number1 = number1 - number2;
+        //cout << "\n Number1 after operator: " << number1.get_string_number() << endl;
 
+        for (int i = 0; i < number1.get_vector_size(); i++)
+        {
+            cout << number1.get_vector_number()[i];
+        }
         break;
     }
-    case 'ESC':
+    case 'Q':
         return 0;
     }
 
