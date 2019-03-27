@@ -1,5 +1,7 @@
 #include "Big_number.h"
 #include <string>
+#include <algorithm>
+#include <climits>
 
 /* Big_number::Big_number(const unsigned long long int  ulli_max=12, vector <unsigned long long int> vect): ULLI_MAX_(ulli_max)
   {
@@ -26,7 +28,7 @@ Big_number::Big_number(string str_number) : ULLI_MAX_(ULLONG_MAX), size_string_M
     {
         if (my_vec_number_[1] == ULLI_MAX_)
         {
-            my_vec_number_[1] += 1;
+            //my_vec_number_[1] += 1;
             my_vec_number_.insert(my_vec_number_.begin(), 0);
         }
         my_vec_number_[1] += 1;
@@ -75,18 +77,6 @@ Big_number::~Big_number()
 
 //  ************************ OPERATORS ************************
 
-//  ******************* = ******************
-Big_number Big_number::operator=(const Big_number &other)
-{
-    if (this == &other)
-        return *this;
-
-    string_number_ = other.string_number_;
-    string_MAX_ = other.string_MAX_;
-    my_vec_number_ = other.my_vec_number_;
-    size_string_number_ = other.size_string_number_;
-    return *this;
-}
 
 //  ******************* == ******************
 bool Big_number::operator==(const Big_number &other) const
@@ -97,15 +87,24 @@ bool Big_number::operator==(const Big_number &other) const
 //  ******************* == ******************
 bool Big_number::operator>(const Big_number &other) const
 {
-    return string_number_.compare(other.string_number_);
+    int compare = string_number_.compare(other.string_number_);
+    if (compare > 0)
+        compare = 1;
+    if (compare < 0)
+        compare = 0;
+    return compare;
 }
 
 //  ******************* == ******************
 bool Big_number::operator<(const Big_number &other) const
 {
-    return other.string_number_.compare(string_number_);
+    int compare = string_number_.compare(other.string_number_);
+    if (compare > 0)
+        compare = 0;
+    if (compare < 0)
+        compare = 1;
+    return compare;
 }
-
 //  ******************* + ******************
 Big_number Big_number::operator+(const Big_number &other) const
 {
@@ -150,7 +149,7 @@ Big_number Big_number::operator+(const Big_number &other) const
     return sum_string_number;
 }
 
-//  ******************* - ****************** FOR NOW WHEN NUM1 > NUM2
+//  ******************* - ****************** WORKS WHEN NUM1 > NUM2
 Big_number Big_number::operator-(const Big_number &other) const
 {
     string string_number_substr;
@@ -230,18 +229,18 @@ Big_number Big_number::operator*(const Big_number &other) const
 
             carry = sum / 10;
             result[index_num1 + index_num2] = sum % 10;
-            index_num2++;
+            ++index_num2;
         }
 
         if (carry > 0)
             result[index_num1 + index_num2] += carry;
 
-        index_num1++;
+        ++index_num1;
     }
 
     int i = result.size() - 1;
     while (i >= 0 && result[i] == 0)
-        i--;
+        --i;
 
     if (i == -1)
         return str_number_multi = "0";

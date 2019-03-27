@@ -7,10 +7,10 @@ using namespace std;
 
 int main()
 {
-    char key;
+    char key, operation;
     cout << "Table convension press: T\n"
-            "String convension press: S\n"
-            "Exit press: Q\n";
+         "String convension press: S\n"
+         "Exit press: Q\n";
     cin >> key;
 
     switch (key)
@@ -23,29 +23,33 @@ int main()
     case 'S':
     {
         string str_ulli_number;
-        cout << "Gimmi numba I \n";
+        cout << "Give first number\n";
         cin >> str_ulli_number;
-        cout << "\n Number: " << str_ulli_number << endl;
-
+        cout << "\n Number I: " << str_ulli_number << endl;
         Big_number number1(str_ulli_number);
-        cout << "\n Number1: " << number1.get_string_number() << endl;
 
-        cout << "Gimmi numba II \n";
+        cout << "Give second number\n";
         cin >> str_ulli_number;
-        cout << "\n Number: " << str_ulli_number << endl;
-
+        cout << "\n Number II: " << str_ulli_number << endl;
         Big_number number2(str_ulli_number);
-        cout << "\n Number2: " << number2.get_string_number() << endl;
 
-        //number1 = number1 - number2;
-        //cout << "\n Number1 after operator: " << number1.get_string_number() << endl;
-
-        for (int i = 0; i < number1.get_vector_size(); i++)
+        /*cout << "Add press: A\n"
+            "Subtract press: S\n"
+            "Multiply press: M\n";
+        switch (operation)
         {
-            cout << number1.get_vector_number()[i];
+        case 'A':
+        {
+            Big_number number3(number1 + number2);
+            cout << "\n Added number: " << number3.get_string_number();
+            break;
         }
+        }*/
+        Big_number number3(number1 * number2);
+        cout<< number3.get_string_number()<<endl;
         break;
     }
+
     case 'Q':
         return 0;
     }

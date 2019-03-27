@@ -38,3 +38,20 @@
 	"Big_number.h"
 	<string>
 
+1553682331 source:/home/mion/s/234/amakowsk/PROI/PROI_project01-V2/src/Big_number.cpp
+	"Big_number.h"
+	<string>
+	<algorithm>
+	<climits>
+
+1553682338 /home/mion/s/234/amakowsk/PROI/PROI_project01-V2/include/Big_number.h
+	<iostream>
+	<vector>
+	<string>
+
+1553681112 source:/home/mion/s/234/amakowsk/PROI/PROI_project01-V2/main.cpp
+	"Big_number.h"
+	<iostream>
+	<vector>
+	<string>
+

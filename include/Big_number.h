@@ -1,6 +1,5 @@
 #ifndef Big_number_H
 #define Big_number_H
-#include <bits/stdc++.h>
 #include <iostream>
 #include <vector>
 #include <string>
@@ -26,7 +25,6 @@ public:
 
     ~Big_number();
 
-    Big_number operator=(const Big_number &other);
     Big_number operator+(const Big_number &other) const;
     Big_number operator-(const Big_number &other) const;
     Big_number operator*(const Big_number &other) const;
